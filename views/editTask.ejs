@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Task</title>
+</head>
+<body>
+  <h1>Edit Task</h1>
+  <form action="/tasks/edit/<%= task._id %>" method="POST" enctype="multipart/form-data">
+    <label>Title:</label>
+    <input type="text" name="title" value="<%= task.title %>" required><br>
+    <label>Description:</label>
+    <textarea name="description" required><%= task.description %></textarea><br>
+    <label>Upload New Image:</label>
+    <input type="file" name="image" accept="image/*"><br>
+    <label>Completed:</label>
+    <input type="checkbox" name="completed" <%= task.completed ? "checked" : "" %>><br>
+    <button type="submit">Update Task</button>
+  </form>
+</body>
+</html>
